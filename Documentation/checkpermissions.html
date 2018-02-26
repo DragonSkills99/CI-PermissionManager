@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="de" http-equiv="Content-Language" />
+<title>CI-PermissionManager Documentation</title>
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function(event) {
+		if(location.hostname == "http://htmlpreview.github.io"){
+			var as = document.getElementsByTagName("a");
+			for(var i = 0; i < as.length; i++){
+				var a = as[i];
+				if(a.hasAttribute("href")){
+					a.setAttribute("href", "http://htmlpreview.github.io/?https://github.com/DragonSkills99/CI-PermissionManager/blob/master/Documentation/" + a.getAttribute("href"));
+				}
+			}
+		}
+	});
+</script>
+<style type="text/css">
+.auto-style1 {
+	font-family: "Courier New", Courier, monospace;
+	margin-left: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Check Permissions</h1>
+<h2>getUsersWith</h2>
+<p class="auto-style1">$this-&gt;permissions-&gt;getUsersWith($permission);</p>
+<p>returns the userObj with the given permission. The permission parameter can 
+be the ID or the slug.</p>
+<h2>getPermissions</h2>
+<p class="auto-style1">$this-&gt;permissions-&gt;getPermissions();</p>
+<p>returns an array of Permission Objects for further checking.</p>
+<h2>getPermissionsByLevel</h2>
+<p class="auto-style1">$this-&gt;permissions-&gt;getPermissionsByLeve($level);</p>
+<p>returns an array of Permission Objects which has the $level as level for 
+further checking. $level can be a numeric value or the slug.</p>
+<h2>getUserPermissions</h2>
+<p class="auto-style1">$this-&gt;permissions-&gt;getUserPermissions([$userid]);</p>
+<p>returns an array of permissions which the currently logged in or the given 
+user possesses. The userid is optional an has to be an numeric value if used.</p>
+<h2>hasPermission</h2>
+<p class="auto-style1">$this-&gt;permissions-&gt;hasPermission($id, 
+[$userpermissions], [$checked_permissions], [$inherit_permissions = true]);</p>
+<p>returns an boolean if the user has this permissions. $id can be an numeric 
+value or the slug. $userpermissions could contain an array of Permission Objects 
+which the User possesses. $checked_permissions could be an array of already 
+checked Permission Objects. $inherit_permissions could be an boolean value, 
+which sets if the method should only check for the given permission (false) or 
+for any permission granted by the level.</p>
+<h2>needPermission</h2>
+<p class="auto-style1">$this-&gt;needPermission($id);</p>
+<p>$id can be an numeric value or the slug of the permission. This method checks 
+if the user has the permission and if not it stops the code execution and shows 
+an error.</p>
+<h2>getInheriting</h2>
+<p class="auto-style1">$this-&gt;permissions-&gt;getInheriting($permission, [$userid], 
+[$result], [$permissions]);</p>
+<p>returns an array of permission ids which are granted by the given 
+$permission. $permission can be an numeric value or the slug. $userid could be 
+the id of an user. $result is the resulting array of ids. $permissions is a 
+Permissions Object given for better performance, should be left null.</p>
+<h2>getPermissionID</h2>
+<p class="auto-style1">$this-&gt;permissions-&gt;getPermissionID($slug);</p>
+<p>returns the numeric ID of the given $slug. $slug can be a numeric value or 
+the slug.</p>
+<h2>existsPermission</h2>
+<p class="auto-style1">$this-&gt;permissions-&gt;existsPermission($id);</p>
+<p>checks if the given permission exists and returns a boolean value. $id can be 
+a numeric value or the slug.</p>
+<h1><a href="GettingStarted.html">&lt; BACK</a></h1>
+
+</body>
+
+</html>

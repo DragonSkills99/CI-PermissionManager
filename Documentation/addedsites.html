@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="de" http-equiv="Content-Language" />
+<title>CI-PermissionManager Documentation</title>
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function(event) {
+		if(location.hostname == "http://htmlpreview.github.io"){
+			var as = document.getElementsByTagName("a");
+			for(var i = 0; i < as.length; i++){
+				var a = as[i];
+				if(a.hasAttribute("href")){
+					a.setAttribute("href", "http://htmlpreview.github.io/?https://github.com/DragonSkills99/CI-PermissionManager/blob/master/Documentation/" + a.getAttribute("href"));
+				}
+			}
+		}
+	});
+</script>
+<style type="text/css">
+.auto-style2 {
+	font-family: "Courier New", Courier, monospace;
+	margin-left: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Added Sites</h1>
+<h2>keys</h2>
+<p class="auto-style2">PermissionManager/keys</p>
+<p>returns key images</p>
+<h2>installation</h2>
+<p class="auto-style2">PermissionManager/installation</p>
+<p>lets you choose your superuser. After you've set one you can do it with the 
+users site for further users.</p>
+<h2>install</h2>
+<p class="auto-style2">PermissionManager/install</p>
+<p>creates the needed tables in the database.</p>
+<h2>users</h2>
+<p class="auto-style2">PermissionManager/users</p>
+<p>lists the users of your site. By clicking on an entry you'll be redirected to 
+the user page.</p>
+<h2>userjs</h2>
+<p class="auto-style2">PermissionManager/userjs</p>
+<p>contains some javascript code for the user site.</p>
+<h2>user</h2>
+<p class="auto-style2">PermissionManager/user/$id</p>
+<p>allows you to edit the permission of the given user. $id should be the 
+numeric id, the E-Mail-Address or the username of the selected user.</p>
+<h2>editpermission</h2>
+<p class="auto-style2">
+PermissionManager/editpermission/$userid/$permission/$active</p>
+<p>an interface which toogles the permissions. it is user by the user site by 
+ajax calls.</p>
+<h2>edit</h2>
+<p class="auto-style2">PermissionManager/edit/$permission</p>
+<p>allows you to edit the level of a permission. $permission can be a numeric 
+value or the slug.</p>
+<h2>enroll</h2>
+<p class="auto-style2">PermissionManager/enroll</p>
+<p>this page lists all permission you've access to. If you click on the entries 
+it redirects you to the edit site.</p>
+<h2>add</h2>
+<p class="auto-style2">PermissionManager/add</p>
+<p>allows you to create new permission entries. After successfully creating an 
+entry you'll be redirected to the enroll site.</p>
+<h1><a href="GettingStarted.html">&lt; BACK</a></h1>
+
+</body>
+
+</html>

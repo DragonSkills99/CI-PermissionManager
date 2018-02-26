@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="de" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<style type="text/css">
+.auto-style2 {
+	color: #FF0000;
+}
+.auto-style3 {
+	font-family: "Courier New", Courier, monospace;
+	margin-left: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Manage Permissions</h1>
+<h2>setPermission</h2>
+<p class="auto-style3">$this-&gt;permissions($permission, $userid, $state);</p>
+<p>grants/takes the given user the given permission. $permission can be a 
+numeric value or the slug. $userid has to be the id of the user. $state has to 
+be a boolean value which grants (true) or takes (false) the permission.</p>
+<h2>addPermission</h2>
+<p class="auto-style3">$this-&gt;permissions-&gt;addPermissions($name, $level_slug);</p>
+<p>creates a new permission. $name has to be the name as a string. $level_slug 
+has to be the slug of the upper permission. (or the slug of the currently 
+creating permission)</p>
+<h2>updatePermissionLevel</h2>
+<p class="auto-style3">$this-&gt;permissions-&gt;updatePermissionLevel($permission, 
+$level);</p>
+<p>set a new level for the given permission. $permission can be a numeric value 
+or the slug. $level can be a numeric value or the slug.</p>
+<h2>deletePermission</h2>
+<p class="auto-style3">$this-&gt;permissions-&gt;deletePermission($permission);</p>
+<p>deletes the given permission. $permission can be a numeric value or the slug.</p>
+<p class="auto-style2">Warning: You should not delete the superuser permission. 
+If you've done it you could reset it to your user by calling <em><strong>
+PermissionManager/installation </strong></em>in your browser.</p>
+<h1><a href="GettingStarted.html">&lt; BACK</a></h1>
+
+</body>
+
+</html>

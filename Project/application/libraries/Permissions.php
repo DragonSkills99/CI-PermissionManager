@@ -80,7 +80,13 @@ class Permissions {
     public function slugify($text){
             // replace non letter or digits by -
       $text = preg_replace('~[^\pL\d]+~u', '_', $text);
-    
+      
+      $text = preg_replace("~ä~", "ae", $text);
+      $text = preg_replace("~ö~", "oe", $text);
+      $text = preg_replace("~ü~", "ue", $text);
+      $text = preg_replace("~ß~", "ss", $text);
+      $text = preg_replace("~\@~", "at", $text);
+      
       // transliterate
       $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
     

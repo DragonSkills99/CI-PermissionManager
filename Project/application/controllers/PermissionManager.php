@@ -589,19 +589,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
             $this->permissions->needPermission('add_permission');
             echo $this->input->post('title');
             $data['title'] = 'Create a news item';
+            $this->formbuilder->setMethod("POST");
+            $this->formbuilder->addField((new Field())->setType("text")->setName("name")->setDescription("Name"))->setRule('required');
+            $sel = $this->formbuilder->addField()->setTag("select")->setFillBothRows(true)->setName("needpermission");
+            foreach($this->permissions->getPermissions() as $perm){
+                $sel->addChild()->setTag('option')->setValue($perm->slug)->setInnerValue($perm->name);
+            }
+            $this->formbuilder->addField((new Field())->setType("submit")->setName("submit")->setValue("Create Permission")->setFillBothRows(true));
+            $this->formbuilder->setup();
         
-            $this->form_validation->set_rules('name', 'Text', 'required');
-        
-            if ($this->form_validation->run() === FALSE)
+            if (!$this->formbuilder->validate())
             {
                 $this->load->view('templates/header', $data);
-                $this->formbuilder->setMethod("POST");
-                $this->formbuilder->addField((new Field())->setType("text")->setName("name")->setDescription("Name"));
-                $sel = $this->formbuilder->addField()->setTag("select")->setFillBothRows(true)->setName("needpermission");
-                foreach($this->permissions->getPermissions() as $perm){
-                    $sel->addChild()->setTag('option')->setValue($perm->slug)->setInnerValue($perm->name);
-                }
-                $this->formbuilder->addField((new Field())->setType("submit")->setName("submit")->setValue("Create Permission")->setFillBothRows(true));
                 $this->load->view('templates/echo', array('echo' => $this->formbuilder->getForm()));
                 $this->load->view('templates/footer');
         
@@ -612,6 +611,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 $need = $this->input->post('needpermission');
                 if(!$this->permissions->existsPermission($this->permissions->slugify($name))){
                     $this->permissions->addPermission($name, $this->permissions->slugify($need));
+                    redirect('PermissionManager/enroll');
                 }
                 else{
                     show_error("Permission already exists.", 406, "Permission Insert Error");
