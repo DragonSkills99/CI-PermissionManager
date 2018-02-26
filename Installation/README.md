@@ -10,4 +10,4 @@ Afterwards call:
 
 	DOMAIN + BASEPATH + /PermissionsManager/installation
 
-Next you can choose your user, wich will get the `superuser`-Permission which allows you to add, delete and manage the permissions.
+Next you can choose your user, which will get the `superuser`-Permission which allows you to add, delete and manage the permissions.
